@@ -1,6 +1,12 @@
+import os
 from http import HTTPStatus
 
+from django.core.wsgi import get_wsgi_application
 from django.test import Client, TestCase
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'infra_project.settings')
+
+application = get_wsgi_application()
 
 
 class StaticPagesURLTests(TestCase):
